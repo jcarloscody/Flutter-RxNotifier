@@ -1,5 +1,6 @@
 import 'package:app_client/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:rx_notifier/rx_notifier.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,11 +35,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    controller.conte.addListener(() {
-      print(controller.conte.value);
-    });
+    controller.conte.addListener(
+      () {
+        print('ValuerNotifier ${controller.conte.value}');
+      },
+    );
+
+    rxObserver(
+      () => print('RxNotifier ${controller.conteRxNotifier.value}'),
+    );
   }
 
   @override
@@ -61,6 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
+            RxBuilder(
+              builder: (builder) => Text(
+                'RxNotifier ${controller.conteRxNotifier.value}',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            )
           ],
         ),
       ),
