@@ -2,15 +2,31 @@ import 'package:common/common.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    final awesome = Awesome();
+  test("json to json", () {
+    final json = {
+      'name': 'jos',
+      'room': 'sd',
+      'text': '',
+      'type': 'SocketEventEnum.enter_room',
+    };
 
-    setUp(() {
-      // Additional setup goes here.
-    });
+    final socketEventAReceber = SocketEventAReceber.fromJson(json);
 
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
-    });
+    expect(socketEventAReceber.name, 'jos');
+    expect(socketEventAReceber.type, SocketEventEnum.enter_room);
+    expect(socketEventAReceber.toJson(), json);
   });
+
+  // group('A group of tests', () {
+  //   final awesome = ISocketEventAReceber(
+  //     name: "JOSUE",
+  //     room: "j",
+  //     text: "kk",
+  //     type: SocketEventEnum.enter_room,
+  //   );
+
+  //   setUp(() {
+  //     // Additional setup goes here.
+  //   });
+  // });
 }
