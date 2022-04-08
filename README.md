@@ -2,11 +2,12 @@
 
 
 •	RxNotifier é uma extenção do ValueNotifier(reatividade muito comum no flutter) que dá mais poderes ao ValueNotifier
-o	Dá a possibilidade do valuenotifier ser transparente, igual ao mobx, sendo que não temos um limite arquitetural de precisar de uma action alí.
-o	É bom mas é ruim
-o	Isso não é uma gerencia de estado, mas vc pode gerenciar o estado usando ele.
-o	Transparência: pq eu não preciso realemte definir o cara que eu quero escutar, so de eu ter ele dentro do escopo já é o suficiente para ele rebuidar para cada alteração.
-o	Declarando:  
+•	•	Dá a possibilidade do valuenotifier ser transparente, igual ao mobx, sendo que não temos um limite arquitetural de precisar de uma action alí.
+•	•	É bom mas é ruim
+•	•	Isso não é uma gerencia de estado, mas vc pode gerenciar o estado usando ele.
+•	•	Transparência: pq eu não preciso realemte definir o cara que eu quero escutar, so de eu ter ele dentro do escopo já é o suficiente para ele rebuidar para cada alteração.
+•	•	Declarando:  
+<img src="./imgs/1.png">
 o	Para escutar vc pode usar na forma de ValueNotifier tbm, pq tudo é isso. Mas ele possibilita escutar desta forma
 o	 
 o	 
